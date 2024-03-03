@@ -41,11 +41,11 @@ namespace aspnetCoreReactTemplate.Models
           key.SetConstraintName(key.GetConstraintName().ToSnakeCase());
         }
 
-        // Convert index names from PascalCase to snake_case.
-        foreach (var index in entity.GetIndexes())
-        {
-          index.SetName(index.GetName().ToSnakeCase());
-        }
+        //// Convert index names from PascalCase to snake_case.
+        //foreach (var index in entity.GetIndexes())
+        //{
+        //  index.SetName(index.GetName().ToSnakeCase());
+        //}
       }
 
     }

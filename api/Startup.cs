@@ -29,9 +29,14 @@ namespace aspnetCoreReactTemplate
     {
       services.AddControllersWithViews();
 
-      services.AddEntityFrameworkNpgsql().AddDbContext<DefaultDbContext>(options =>
+      //services.AddEntityFrameworkNpgsql().AddDbContext<DefaultDbContext>(options =>
+      //{
+      //  options.UseNpgsql(Configuration.GetConnectionString("defaultConnection"));
+      //});
+
+      services.AddDbContext<DefaultDbContext>(options =>
       {
-        options.UseNpgsql(Configuration.GetConnectionString("defaultConnection"));
+        options.UseMySql(Configuration.GetConnectionString("defaultConnection"), ServerVersion.AutoDetect(Configuration.GetConnectionString("defaultConnection")));
       });
 
       // Configure Entity Framework Initializer for seeding
